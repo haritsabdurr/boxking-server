@@ -1,7 +1,8 @@
 const express = require('express');
-const app = express();
+const serverless = require('serverless-http');
 const cors = require('cors');
-const PORT = 8800;
+const app = express();
+const PORT = process.env.PORT || 8800;
 
 app.use(express.json());
 app.use(cors());
@@ -35,4 +36,6 @@ require('./routes/customer.routes')(app);
 require('./routes/order.routes')(app);
 require('./routes/method.routes')(app);
 
-app.listen(PORT, () => console.log(`Server is running at port ${PORT}!`));
+// app.listen(PORT, () => console.log(`Server is running at port ${PORT}!`));
+module.exports = app;
+module.exports.handler = serverless(app);

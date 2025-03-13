@@ -36,6 +36,6 @@ require('./routes/customer.routes')(app);
 require('./routes/order.routes')(app);
 require('./routes/method.routes')(app);
 
-// app.listen(PORT, () => console.log(`Server is running at port ${PORT}!`));
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(PORT, () => console.log(`Server is running at port ${PORT}!`));
+// module.exports = app;
+// module.exports.handler = serverless(app);

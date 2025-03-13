@@ -7,7 +7,7 @@ exports.findAll = (req, res) => {
       res.status(200).json(users);
     })
     .catch((err) => {
-      res.status(500).send('Gagal mengambil produk.');
+      res.status(500).send('Gagal mengambil data user.');
     });
 };
 
@@ -19,7 +19,7 @@ exports.findOne = (req, res) => {
       res.status(200).json(user);
     })
     .catch((err) => {
-      res.status(500).send('Gagal mengambil produk.');
+      res.status(500).send('Gagal mengambil data user.');
     });
 };
 
@@ -36,10 +36,10 @@ exports.create = (req, res) => {
   user
     .save()
     .then(() => {
-      res.status(201).send('Produk berhasil ditambahkan.');
+      res.status(201).send('User berhasil ditambahkan.');
     })
     .catch((err) => {
-      res.status(500).send('Gagal menyimpan produk.');
+      res.status(500).send('Gagal menyimpan data user.');
     });
 };
 
@@ -54,10 +54,10 @@ exports.update = (req, res) => {
     user_position,
   })
     .then(() => {
-      res.status(200).send('Produk berhasil diupdate.');
+      res.status(200).send('User berhasil diupdate.');
     })
     .catch((err) => {
-      res.status(500).send('Gagal mengupdate produk.');
+      res.status(500).send('Gagal mengupdate data user.');
     });
 };
 
@@ -66,10 +66,10 @@ exports.delete = (req, res) => {
 
   User.findByIdAndRemove(userId)
     .then(() => {
-      res.status(200).send('Produk berhasil dihapus.');
+      res.status(200).send('User berhasil dihapus.');
     })
     .catch((err) => {
-      res.status(500).send('Gagal menghapus produk.');
+      res.status(500).send('Gagal menghapus data user.');
     });
 };
 

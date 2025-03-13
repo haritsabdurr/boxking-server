@@ -9,5 +9,5 @@ module.exports = (app) => {
   router.post('/login', customer.login);
   router.delete('/:id', customer.delete);
 
-  app.use('/api/customer', router);
+  app.use('/customer', router);
 };

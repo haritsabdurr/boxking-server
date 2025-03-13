@@ -6,5 +6,5 @@ module.exports = (app) => {
   router.get('/:id', order.findOne);
   router.post('/', order.create);
 
-  app.use('/api/order', router);
+  app.use('/order', router);
 };
